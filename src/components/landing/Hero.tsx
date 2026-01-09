@@ -4,7 +4,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import Logo3D from './Logo3D';
 import nagaroLogo from '@/assets/nagaro-logo.svg';
 
-const WHATSAPP_NUMBER = '5511999999999';
+const WHATSAPP_NUMBER = '5575992539838';
 const WHATSAPP_MESSAGE_PT = 'Olá! Gostaria de solicitar um orçamento para um projeto.';
 const WHATSAPP_MESSAGE_EN = 'Hello! I would like to request a quote for a project.';
 

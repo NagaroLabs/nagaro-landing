@@ -3,7 +3,7 @@ import { Menu, X } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import nagaroLogo from '@/assets/nagaro-logo.svg';
 
-const WHATSAPP_NUMBER = '5511999999999'; // Replace with actual number
+const WHATSAPP_NUMBER = '5575992539838'; // Replace with actual number
 const WHATSAPP_MESSAGE_PT = 'Olá! Gostaria de saber mais sobre os serviços da Nagaro.';
 const WHATSAPP_MESSAGE_EN = 'Hello! I would like to know more about Nagaro services.';
 
