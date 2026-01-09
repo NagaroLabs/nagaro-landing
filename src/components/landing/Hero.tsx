@@ -71,17 +71,14 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* 3D Logo */}
-        <div className="mb-6 opacity-0 animate-fade-up" style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}>
+        <div className="mb-6 animate-fade-in" style={{ animationDuration: '0.8s' }}>
           <Suspense fallback={<LogoFallback />}>
             <Logo3D />
           </Suspense>
         </div>
 
         {/* Tagline */}
-        <div 
-          className="opacity-0 animate-fade-up"
-          style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}
-        >
+        <div className="animate-fade-in" style={{ animationDuration: '0.8s', animationDelay: '0.1s', animationFillMode: 'both' }}>
           <span className="inline-block px-4 py-2 rounded-full border border-border/50 bg-secondary/30 text-xs font-medium text-muted-foreground tracking-wider uppercase">
             {t('hero.tagline')}
           </span>
@@ -89,8 +86,8 @@ const Hero = () => {
 
         {/* Main Title */}
         <h1 
-          className="mt-8 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight opacity-0 animate-fade-up"
-          style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}
+          className="mt-8 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight animate-fade-in"
+          style={{ animationDuration: '0.8s', animationDelay: '0.2s', animationFillMode: 'both' }}
         >
           <span className="text-foreground">{t('hero.title')}</span>
           <br />
@@ -101,16 +98,16 @@ const Hero = () => {
 
         {/* Subtitle */}
         <p 
-          className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-up"
-          style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
+          className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto animate-fade-in"
+          style={{ animationDuration: '0.8s', animationDelay: '0.3s', animationFillMode: 'both' }}
         >
           {t('hero.subtitle')}
         </p>
 
         {/* CTAs */}
         <div 
-          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 animate-fade-up"
-          style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}
+          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in"
+          style={{ animationDuration: '0.8s', animationDelay: '0.4s', animationFillMode: 'both' }}
         >
           <a
             href={whatsappUrl}
