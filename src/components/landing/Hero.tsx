@@ -27,7 +27,7 @@ const Hero = () => {
   )}`;
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-28">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-28 pb-24 sm:pb-28">
       {/* Background Effects */}
       <div className="absolute inset-0">
         {/* Gradient Orbs */}
@@ -130,7 +130,7 @@ const Hero = () => {
       {/* Scroll Indicator */}
       <a
         href="#about"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-muted-foreground hover:text-foreground transition-colors animate-bounce"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-muted-foreground hover:text-foreground transition-colors animate-bounce"
       >
         <ChevronDown size={32} />
       </a>
