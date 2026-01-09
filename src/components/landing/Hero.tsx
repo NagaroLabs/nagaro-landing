@@ -116,10 +116,10 @@ const Hero = () => {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group gradient-metallic text-background px-8 py-4 rounded-full text-base font-semibold hover:opacity-90 transition-all flex items-center gap-2 shadow-lg"
+            className="group gradient-metallic text-background px-8 py-4 rounded-full text-base font-semibold hover:opacity-90 transition-all inline-flex items-center justify-center gap-2 shadow-lg whitespace-nowrap"
           >
-            {t('hero.cta')}
-            <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+            <span>{t('hero.cta')}</span>
+            <ArrowRight size={18} className="flex-shrink-0 transition-transform group-hover:translate-x-1" />
           </a>
           <a
             href="#services"
