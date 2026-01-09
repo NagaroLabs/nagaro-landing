@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import nagaroLogo from '@/assets/nagaro-logo.jpg';
+import nagaroLogo from '@/assets/nagaro-logo.svg';
 
 const WHATSAPP_NUMBER = '5511999999999'; // Replace with actual number
 const WHATSAPP_MESSAGE_PT = 'Olá! Gostaria de saber mais sobre os serviços da Nagaro.';

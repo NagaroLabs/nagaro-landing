@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Logo3D from './Logo3D';
-import nagaroLogo from '@/assets/nagaro-logo.jpg';
+import nagaroLogo from '@/assets/nagaro-logo.svg';
 
 const WHATSAPP_NUMBER = '5511999999999';
 const WHATSAPP_MESSAGE_PT = 'Olá! Gostaria de solicitar um orçamento para um projeto.';

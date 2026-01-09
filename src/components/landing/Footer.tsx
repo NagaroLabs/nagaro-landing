@@ -1,5 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext';
-import nagaroLogo from '@/assets/nagaro-logo.jpg';
+import nagaroLogo from '@/assets/nagaro-logo.svg';
 
 const Footer = () => {
   const { t } = useLanguage();
