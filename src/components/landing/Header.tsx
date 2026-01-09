@@ -25,7 +25,6 @@ const Header = () => {
     { href: '#services', label: t('nav.services') },
     { href: '#tech', label: t('nav.tech') },
     { href: '#benefits', label: t('nav.benefits') },
-    { href: '#testimonials', label: t('nav.testimonials') },
   ];
 
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(

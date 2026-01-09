@@ -5,7 +5,6 @@ import About from '@/components/landing/About';
 import Services from '@/components/landing/Services';
 import Technologies from '@/components/landing/Technologies';
 import Benefits from '@/components/landing/Benefits';
-import Testimonials from '@/components/landing/Testimonials';
 import CTASection from '@/components/landing/CTASection';
 import Footer from '@/components/landing/Footer';
 
@@ -20,7 +19,6 @@ const Index = () => {
           <Services />
           <Technologies />
           <Benefits />
-          <Testimonials />
           <CTASection />
         </main>
         <Footer />
