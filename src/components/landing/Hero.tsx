@@ -27,7 +27,7 @@ const Hero = () => {
   )}`;
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-28">
       {/* Background Effects */}
       <div className="absolute inset-0">
         {/* Gradient Orbs */}
