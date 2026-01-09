@@ -1,10 +1,23 @@
+import { Suspense } from 'react';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import Logo3D from './Logo3D';
 import nagaroLogo from '@/assets/nagaro-logo.jpg';
 
 const WHATSAPP_NUMBER = '5511999999999';
 const WHATSAPP_MESSAGE_PT = 'Olá! Gostaria de solicitar um orçamento para um projeto.';
 const WHATSAPP_MESSAGE_EN = 'Hello! I would like to request a quote for a project.';
+
+// Fallback for 3D loading
+const LogoFallback = () => (
+  <div className="h-48 sm:h-56 md:h-64 flex items-center justify-center">
+    <img
+      src={nagaroLogo}
+      alt="Nagaro"
+      className="h-24 sm:h-32 md:h-40 w-auto mx-auto glow-subtle rounded-2xl animate-pulse"
+    />
+  </div>
+);
 
 const Hero = () => {
   const { language, t } = useLanguage();
@@ -57,13 +70,11 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Logo */}
-        <div className="mb-10 opacity-0 animate-fade-up" style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}>
-          <img
-            src={nagaroLogo}
-            alt="Nagaro"
-            className="h-24 sm:h-32 md:h-40 w-auto mx-auto glow-subtle rounded-2xl"
-          />
+        {/* 3D Logo */}
+        <div className="mb-6 opacity-0 animate-fade-up" style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}>
+          <Suspense fallback={<LogoFallback />}>
+            <Logo3D />
+          </Suspense>
         </div>
 
         {/* Tagline */}
