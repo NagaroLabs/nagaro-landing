@@ -8,21 +8,27 @@ import Benefits from '@/components/landing/Benefits';
 import CTASection from '@/components/landing/CTASection';
 import Footer from '@/components/landing/Footer';
 
+const LandingContent = () => {
+  return (
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main>
+        <Hero />
+        <About />
+        <Services />
+        <Technologies />
+        <Benefits />
+        <CTASection />
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
 const Index = () => {
   return (
     <LanguageProvider>
-      <div className="min-h-screen bg-background">
-        <Header />
-        <main>
-          <Hero />
-          <About />
-          <Services />
-          <Technologies />
-          <Benefits />
-          <CTASection />
-        </main>
-        <Footer />
-      </div>
+      <LandingContent />
     </LanguageProvider>
   );
 };
