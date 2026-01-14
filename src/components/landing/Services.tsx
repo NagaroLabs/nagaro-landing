@@ -40,10 +40,17 @@ const Services = () => {
       ref={ref}
       className="relative py-24 sm:py-32 overflow-hidden"
     >
+      {/* Background Effects */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/20 to-background" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-white/[0.02] rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white/[0.02] rounded-full blur-3xl" />
+      </div>
+
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className={`text-center max-w-3xl mx-auto transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <span className="inline-block px-4 py-2 rounded-full border border-border/50 bg-secondary/30 text-xs font-medium text-muted-foreground tracking-wider uppercase">
+          <span className="inline-block px-4 py-2 rounded-full border border-border/50 bg-secondary/30 backdrop-blur-sm text-xs font-medium text-muted-foreground tracking-wider uppercase holographic">
             {t('services.tagline')}
           </span>
 
@@ -63,29 +70,41 @@ const Services = () => {
             return (
               <div
                 key={index}
-                className={`group relative p-8 rounded-2xl bg-secondary/20 border border-border/30 hover:border-border/50 transition-all duration-500 hover:-translate-y-1 ${
+                className={`group relative p-8 rounded-2xl futuristic-card border border-border/30 hover:border-white/20 transition-all duration-500 hover:-translate-y-2 ${
                   isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                {/* Gradient Border on Hover */}
-                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 gradient-border" />
+                {/* Animated Border */}
+                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/10 to-transparent animate-border-flow" style={{ padding: '1px' }} />
+                </div>
 
-                {/* Icon */}
-                <div className="relative w-14 h-14 rounded-xl bg-gradient-to-br from-muted to-muted/50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Icon size={28} className="text-foreground" />
+                {/* Icon Container */}
+                <div className="relative w-16 h-16 rounded-xl gradient-metallic flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 glow-pulse">
+                  <Icon size={28} className="text-background" />
+                  
+                  {/* Icon Glow */}
+                  <div className="absolute inset-0 rounded-xl bg-white/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
 
                 {/* Content */}
-                <h3 className="relative text-xl font-semibold text-foreground mb-3">
+                <h3 className="relative text-xl font-semibold text-foreground mb-3 group-hover:text-white transition-colors">
                   {service.title}
                 </h3>
-                <p className="relative text-muted-foreground leading-relaxed">
+                <p className="relative text-muted-foreground leading-relaxed group-hover:text-gray-300 transition-colors">
                   {service.description}
                 </p>
 
-                {/* Metallic Shine Effect */}
-                <div className="absolute inset-0 rounded-2xl metallic-shine opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                {/* Corner Accent */}
+                <div className="absolute top-0 right-0 w-16 h-16 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <svg viewBox="0 0 64 64" className="w-full h-full">
+                    <path d="M64 0 L64 16 L48 0 Z" fill="rgba(255,255,255,0.1)" />
+                  </svg>
+                </div>
+
+                {/* Scan Line Effect */}
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-scan-line" />
               </div>
             );
           })}
