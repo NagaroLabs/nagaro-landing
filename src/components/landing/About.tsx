@@ -12,7 +12,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" ref={ref} className="relative py-24 sm:py-32 overflow-hidden border border-red-500">
+    <section id="about" ref={ref} className="relative py-24 sm:py-32 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-graphite/50 to-background" />
 
