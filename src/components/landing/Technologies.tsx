@@ -1,21 +1,22 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useInView } from '@/hooks/useInView';
+import NeuralNetwork from './NeuralNetwork';
 
 const Technologies = () => {
   const { t } = useLanguage();
   const { ref, isInView } = useInView({ threshold: 0.2 });
 
   const technologies = [
-    { name: 'React', icon: '⚛️' },
-    { name: 'Next.js', icon: '▲' },
-    { name: 'TypeScript', icon: '📘' },
-    { name: 'Node.js', icon: '🟢' },
-    { name: 'Python', icon: '🐍' },
-    { name: 'AWS', icon: '☁️' },
-    { name: 'PostgreSQL', icon: '🐘' },
-    { name: 'Docker', icon: '🐳' },
-    { name: 'GraphQL', icon: '◈' },
-    { name: 'Tailwind', icon: '🎨' },
+    { name: 'React', icon: '⚛️', color: 'from-cyan-500/20 to-blue-500/20' },
+    { name: 'Next.js', icon: '▲', color: 'from-gray-500/20 to-gray-700/20' },
+    { name: 'TypeScript', icon: '📘', color: 'from-blue-500/20 to-blue-700/20' },
+    { name: 'Node.js', icon: '🟢', color: 'from-green-500/20 to-emerald-500/20' },
+    { name: 'Python', icon: '🐍', color: 'from-yellow-500/20 to-blue-500/20' },
+    { name: 'AWS', icon: '☁️', color: 'from-orange-500/20 to-yellow-500/20' },
+    { name: 'PostgreSQL', icon: '🐘', color: 'from-blue-500/20 to-indigo-500/20' },
+    { name: 'Docker', icon: '🐳', color: 'from-blue-400/20 to-cyan-500/20' },
+    { name: 'GraphQL', icon: '◈', color: 'from-pink-500/20 to-purple-500/20' },
+    { name: 'Tailwind', icon: '🎨', color: 'from-teal-500/20 to-cyan-500/20' },
   ];
 
   return (
@@ -24,73 +25,112 @@ const Technologies = () => {
       ref={ref}
       className="relative py-24 sm:py-32 overflow-hidden"
     >
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-graphite/30 to-background" />
+      {/* ========== LAYERED BACKGROUNDS ========== */}
       
-      {/* Tech Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="techPattern" width="100" height="100" patternUnits="userSpaceOnUse">
-              <circle cx="50" cy="50" r="1" fill="white" />
-              <line x1="50" y1="0" x2="50" y2="100" stroke="white" strokeWidth="0.2" opacity="0.3" />
-              <line x1="0" y1="50" x2="100" y2="50" stroke="white" strokeWidth="0.2" opacity="0.3" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#techPattern)" />
-        </svg>
+      {/* Base gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-black" />
+
+      {/* Neural Network */}
+      <div className="absolute inset-0 z-[1] opacity-50">
+        <NeuralNetwork />
       </div>
 
+      {/* Radial glow */}
+      <div className="absolute inset-0 z-[2] bg-[radial-gradient(ellipse_60%_40%_at_50%_50%,rgba(255,255,255,0.03),transparent)]" />
+
+      {/* Tech grid */}
+      <div className="absolute inset-0 z-[3] opacity-[0.03]" style={{
+        backgroundImage: `
+          linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)
+        `,
+        backgroundSize: '60px 60px',
+      }} />
+
+      {/* Floating particles */}
+      <div className="absolute inset-0 z-[4]">
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-white/30 rounded-full animate-float-particle"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${5 + Math.random() * 5}s`,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* ========== CONTENT ========== */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className={`text-center max-w-3xl mx-auto transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <span className="inline-block px-4 py-2 rounded-full border border-border/50 bg-secondary/30 backdrop-blur-sm text-xs font-medium text-muted-foreground tracking-wider uppercase holographic">
+        <div className={`text-center max-w-3xl mx-auto transition-all duration-1000 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <span className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-xl text-xs font-medium text-white/70 tracking-[0.2em] uppercase">
             {t('tech.tagline')}
           </span>
 
-          <h2 className="mt-6 text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
-            {t('tech.title')}
+          <h2 className="mt-8 text-4xl sm:text-5xl lg:text-6xl font-bold">
+            <span className="bg-gradient-to-r from-white via-gray-200 to-gray-500 bg-clip-text text-transparent">
+              {t('tech.title')}
+            </span>
           </h2>
 
-          <p className="mt-4 text-lg text-muted-foreground">
+          <p className="mt-6 text-lg sm:text-xl text-gray-400">
             {t('tech.subtitle')}
           </p>
         </div>
 
-        {/* Tech Grid */}
-        <div className="mt-16 flex flex-wrap justify-center gap-4">
+        {/* Tech Cloud */}
+        <div className="mt-20 flex flex-wrap justify-center gap-4 lg:gap-6">
           {technologies.map((tech, index) => (
             <div
               key={tech.name}
-              className={`group relative flex items-center gap-3 px-6 py-4 rounded-full futuristic-card border border-border/30 hover:border-white/30 transition-all duration-500 cursor-default hover:scale-105 ${
-                isInView ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
+              className={`group relative transition-all duration-700 ${
+                isInView ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
               }`}
-              style={{ transitionDelay: `${index * 50}ms` }}
+              style={{ transitionDelay: `${index * 80}ms` }}
             >
-              {/* Icon */}
-              <span className="text-2xl group-hover:scale-125 transition-transform duration-300 group-hover:animate-bounce">
-                {tech.icon}
-              </span>
-              
-              {/* Name */}
-              <span className="text-sm font-medium text-foreground group-hover:text-white transition-colors">
-                {tech.name}
-              </span>
+              <div className="relative flex items-center gap-3 px-6 py-4 rounded-2xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-white/10 backdrop-blur-sm transition-all duration-500 hover:scale-110 hover:border-white/20 hover:shadow-[0_0_40px_rgba(255,255,255,0.1)] cursor-default overflow-hidden">
+                
+                {/* Gradient background on hover */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${tech.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                
+                {/* Shine effect */}
+                <div className="absolute inset-0 overflow-hidden rounded-2xl">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                </div>
 
-              {/* Glow Effect */}
-              <div className="absolute inset-0 rounded-full bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl" />
-              
-              {/* Shine Effect */}
-              <div className="absolute inset-0 rounded-full overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                {/* Icon */}
+                <span className="relative text-3xl group-hover:scale-125 transition-transform duration-500">
+                  {tech.icon}
+                </span>
+                
+                {/* Name */}
+                <span className="relative text-sm font-medium text-white group-hover:text-white transition-colors">
+                  {tech.name}
+                </span>
+
+                {/* Pulse effect */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-white/0 group-hover:border-white/10 group-hover:scale-110 group-hover:opacity-0 transition-all duration-500" />
               </div>
             </div>
           ))}
         </div>
 
-        {/* Decorative Elements */}
-        <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-gradient-to-r from-muted/10 to-transparent blur-3xl pointer-events-none animate-pulse-slow" />
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-96 h-96 rounded-full bg-gradient-to-l from-muted/10 to-transparent blur-3xl pointer-events-none animate-pulse-slow" style={{ animationDelay: '2s' }} />
+        {/* Central orbiting effect */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] pointer-events-none opacity-10">
+          <div className="absolute inset-0 rounded-full border border-white/20 animate-spin-slow" style={{ animationDuration: '40s' }}>
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-white rounded-full" />
+          </div>
+          <div className="absolute inset-8 rounded-full border border-white/15 animate-reverse-spin" style={{ animationDuration: '30s' }}>
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-white rounded-full" />
+          </div>
+          <div className="absolute inset-16 rounded-full border border-white/10 animate-spin-slow" style={{ animationDuration: '20s' }}>
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-1 bg-white rounded-full" />
+          </div>
+        </div>
       </div>
     </section>
   );
