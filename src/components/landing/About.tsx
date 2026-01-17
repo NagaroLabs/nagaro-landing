@@ -64,7 +64,7 @@ const About = () => {
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
                 {/* Glow Effect */}
-                <div className="absolute inset-0 rounded-2xl bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
+                <div className="absolute inset-0 rounded-2xl bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl pointer-events-none" />
 
                 {/* Stat Value */}
                 <div className="relative text-3xl sm:text-4xl font-bold gradient-metallic-text text-glow">
