@@ -184,23 +184,6 @@ const Hero = () => {
           </a>
         </div>
 
-        {/* Stats ticker */}
-        <div 
-          className={`mt-16 flex justify-center gap-12 transition-all duration-1000 delay-700 ${
-            showButtons ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
-          {[
-            { value: '50+', label: 'Projetos' },
-            { value: '100%', label: 'Satisfação' },
-            { value: '24/7', label: 'Suporte' },
-          ].map((stat, i) => (
-            <div key={i} className="text-center">
-              <div className="text-2xl sm:text-3xl font-bold gradient-metallic-text">{stat.value}</div>
-              <div className="text-xs sm:text-sm text-white/50 uppercase tracking-wider mt-1">{stat.label}</div>
-            </div>
-          ))}
-        </div>
       </div>
 
       {/* Scroll Indicator */}
