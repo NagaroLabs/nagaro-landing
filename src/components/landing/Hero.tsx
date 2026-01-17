@@ -186,6 +186,9 @@ const Hero = () => {
 
       </div>
 
+      {/* Spacer */}
+      <div className="h-24 sm:h-32" />
+
       {/* Scroll Indicator */}
       <a
         href="#about"
