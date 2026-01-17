@@ -67,20 +67,20 @@ const About = () => {
                 <div className="absolute inset-0 rounded-2xl bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl pointer-events-none" />
 
                 {/* Stat Value */}
-                <div className="relative text-3xl sm:text-4xl font-bold gradient-metallic-text text-glow">
+                <div className="relative z-10 text-3xl sm:text-4xl font-bold gradient-metallic-text text-glow">
                   <span className="inline-block group-hover:scale-110 transition-transform duration-500">
                     {stat.value}
                   </span>
                 </div>
 
                 {/* Stat Label */}
-                <div className="relative mt-2 text-sm text-muted-foreground group-hover:text-gray-300 transition-colors">
+                <div className="relative z-10 mt-2 text-sm text-muted-foreground group-hover:text-gray-300 transition-colors">
                   {stat.label}
                 </div>
 
                 {/* Corner Decorations */}
-                <div className="absolute top-2 left-2 w-3 h-3 border-l border-t border-white/20 opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="absolute bottom-2 right-2 w-3 h-3 border-r border-b border-white/20 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute top-2 left-2 w-3 h-3 border-l border-t border-white/20 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                <div className="absolute bottom-2 right-2 w-3 h-3 border-r border-b border-white/20 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
               </div>
             ))}
           </div>
