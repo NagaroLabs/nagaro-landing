@@ -192,7 +192,7 @@ const Hero = () => {
       {/* Scroll Indicator */}
       <a
         href="#about"
-        className={`absolute bottom-8 left-1/2 -translate-x-1/2 z-[20] text-white/50 hover:text-white transition-all duration-500 ${
+        className={`absolute bottom-1 left-1/2 -translate-x-1/2 z-[20] text-white/50 hover:text-white transition-all duration-500 ${
           showButtons ? 'opacity-100' : 'opacity-0'
         }`}
       >
