@@ -68,7 +68,7 @@ const About = () => {
 
                 {/* Stat Value */}
                 <div className="relative z-10 text-3xl sm:text-4xl font-bold gradient-metallic-text text-glow">
-                  <span className="inline-block group-hover:scale-110 transition-transform duration-500">
+                  <span className="inline-block  transition-transform duration-500">
                     {stat.value}
                   </span>
                 </div>
